@@ -1,0 +1,1 @@
+Convert the zooqle RSS format into something that flexget can understand
