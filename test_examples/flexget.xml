@@ -1,0 +1,25 @@
+<rss version="2.0">
+<script data-x-lastpass="">
+(function(){var c=0;if("undefined"!==typeof CustomEvent&&"function"===typeof window.dispatchEvent){var a=function(a){try{if("object"===typeof a&&(a=JSON.stringify(a)),"string"===typeof a)return window.dispatchEvent(new CustomEvent("lprequeststart",{detail:{data:a,requestID:++c}})),c}catch(f){}},b=function(a){try{window.dispatchEvent(new CustomEvent("lprequestend",{detail:a}))}catch(f){}};"undefined"!==typeof XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.send&&(XMLHttpRequest.prototype.send= function(c){return function(f){var d=this,e=a(f);e&&d.addEventListener("loadend",function(){b({requestID:e,statusCode:d.status})});return c.apply(d,arguments)}}(XMLHttpRequest.prototype.send));"function"===typeof fetch&&(fetch=function(c){return function(f,d){var e=a(d),g=c.apply(this,arguments);if(e){var h=function(a){b({requestID:e,statusCode:a&&a.status})};g.then(h)["catch"](h)}return g}}(fetch))}})(); (function(){if("undefined"!==typeof CustomEvent){var c=function(a){if(a.lpsubmit)return a;var b=function(){try{this.dispatchEvent(new CustomEvent("lpsubmit"))}catch(k){}return a.apply(this,arguments)};b.lpsubmit=!0;return b};window.addEventListener("DOMContentLoaded",function(){if(document&&document.forms&&0<document.forms.length)for(var a=0;a<document.forms.length;++a)document.forms[a].submit=c(document.forms[a].submit)},!0);document.createElement=function(a){return function(){var b=a.apply(this, arguments);b&&"FORM"===b.nodeName&&b.submit&&(b.submit=c(b.submit));return b}}(document.createElement)}})();
+</script>
+<channel>
+<title>
+[torrent] tvunderground.org.ru: Mr. Robot - Season 2 (720p.HDTV) english
+</title>
+<link>
+http://tvunderground.org.ru/index.php?show=episodes&sid=83576
+</link>
+<description>Latest Torrents</description>
+<item>
+<pubDate>Fri, 23 Sep 2016 07:25:27 GMT</pubDate>
+<title>[torrent] Mr. Robot - 2x12 - Pyth0n (Part 2)</title>
+<description>
+Type: PROPER.720p.HDTV<br />Ripper: KILLERS<br />Submitter: Pyth0n<br />Download: <a href="http://tvunderground.org.ru/torrent.php?tid=264013">Download</a>
+</description>
+<link>
+http://tvunderground.org.ru/index.php?show=episodes&sid=83576
+</link>
+<guid>http://tvunderground.org.ru/torrent.php?tid=264013</guid>
+</item>
+</channel>
+</rss>
