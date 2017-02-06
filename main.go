@@ -2,10 +2,11 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
 	"log"
 	"net/http"
 	"os"
+
+	"encoding/xml"
 
 	"github.com/labstack/echo"
 )
@@ -24,9 +25,26 @@ func main() {
 		if err != nil {
 			log.Fatal(err)
 		}
-		robots, err := ioutil.ReadAll(res.Body)
 
-		c.String(200, string(robots))
+		z := ZXML{}
+		f := FXML{}
+		zDec := xml.NewDecoder(res.Body)
+		fEnc := xml.NewEncoder(c.Response())
+
+		err = zDec.Decode(&z)
+		if err != nil {
+			return err
+		}
+
+		f.Channel.Items = make([]FItem, len(z.Channel.Items))
+		for i, zi := range z.Channel.Items {
+			f.Channel.Items[i] = FItem{
+				Title: zi.Title,
+				Link:  zi.Link,
+				GUID:  zi.GUID.URL,
+			}
+		}
+		err = fEnc.Encode(&f)
 		return err
 	})
 	e.Logger.Fatal(e.Start(":" + port))

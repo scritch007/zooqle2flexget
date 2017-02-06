@@ -6,15 +6,15 @@ import (
 	"testing"
 )
 
-func TestZooqleExtract(t *testing.T) {
-	f, err := os.Open("test_examples/zooqle.xml")
-	toFind := "https://zooqle.com/download/vlp1u.torrent"
+func TestFlexGetExtract(t *testing.T) {
+	f, err := os.Open("test_examples/flexget.xml")
+	toFind := "http://tvunderground.org.ru/torrent.php?tid=264013"
 	if err != nil {
 		t.Fatalf("Failed to open xml test file with error %v", err)
 	}
 
 	dec := xml.NewDecoder(f)
-	res := ZXML{}
+	res := FXML{}
 	err = dec.Decode(&res)
 	if err != nil {
 		t.Fatalf("Failed to decode xml test file with error %v", err)
@@ -25,7 +25,7 @@ func TestZooqleExtract(t *testing.T) {
 	}
 
 	for _, i := range res.Channel.Items {
-		if i.GUID.URL == toFind {
+		if i.GUID == toFind {
 			return
 		}
 
